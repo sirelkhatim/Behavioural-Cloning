@@ -102,11 +102,17 @@ The final model architecture consisted of 5 convolutional layers a flattening la
 I have used the sample data provided by udacity. For better generalizability I could have used the simulator provided by Udacity to gather more data by driving two laps and another two laps backward in the given track. As well as recording a few recovery laps.
 
 To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
+
 ![alt text][brightness_altered.png]
+
 ![alt text][flipped.png]
+
 ![alt text][pan.png]
+
 ![alt text][zoom.png]
+
 ![alt text][cut_forward_bias.png]
+
 
 After the collection process, I had X number of data points. I then preprocessed this data by ...
 
