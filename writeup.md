@@ -103,15 +103,15 @@ I have used the sample data provided by udacity. For better generalizability I c
 
 To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
 
-![alt text][brightness_altered.png]
+![brightness_altered.png]
 
-![alt text][flipped.png]
+![flipped.png]
 
-![alt text][pan.png]
+![pan.png]
 
-![alt text][zoom.png]
+![zoom.png]
 
-![alt text][cut_forward_bias.png]
+![cut_forward_bias.png]
 
 
 After the collection process, I had X number of data points. I then preprocessed this data by ...
