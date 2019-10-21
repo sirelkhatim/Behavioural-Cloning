@@ -37,6 +37,7 @@ My project includes the following files:
 * drive.py for driving the car in autonomous mode
 * model.h5 containing the nvidia model
 * writeup.md summarizing the results
+* video of car driving around track using model can be found at: https://youtu.be/QSBr1DsTNjU
 
 #### 2. Submission includes functional code
 Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
