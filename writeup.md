@@ -55,47 +55,31 @@ The model.py file contains the code for training and saving the convolution neur
 
 My model consists of a convolution neural network with 3x3 filter sizes and depths between 32 and 128 (model.py lines 18-24) 
 
-The model includes RELU layers to introduce nonlinearity (code line 20), and the data is normalized in the model using a Keras lambda layer (code line 18). 
+The model includes ELU layers to introduce nonlinearity (code line 20), and the data is normalized in the model using a Keras lambda layer (code line 18). 
 
-#### 2. Attempts to reduce overfitting in the model
 
-The model contains dropout layers in order to reduce overfitting (model.py lines 21). 
-
-The model was trained and validated on different data sets to ensure that the model was not overfitting (code line 10-16). The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
 #### 3. Model parameter tuning
 
 The model used an adam optimizer, so the learning rate was not tuned manually (model.py line 25).
 
-#### 4. Appropriate training data
-
-Training data was chosen to keep the vehicle driving on the road. I used a combination of center lane driving, recovering from the left and right sides of the road ... 
-
-For details about how I created the training data, see the next section. 
 
 ### Model Architecture and Training Strategy
 
 #### 1. Solution Design Approach
 
-The overall strategy for deriving a model architecture was to ...
-
-My first step was to use a convolution neural network model similar to the ... I thought this model might be appropriate because ...
+I used the nvidia model to train the c
 
 In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was overfitting. 
 
-To combat the overfitting, I modified the model so that ...
+To combat the overfitting, I modified the model to include dropout layers, but after some experimentation the model seeemed to do better without dropout layers so I removed them.
 
-Then I ... 
-
-The final step was to run the simulator to see how well the car was driving around track one. There were a few spots where the vehicle fell off the track... to improve the driving behavior in these cases, I ....
-
-At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
+The final step was to run the simulator to see how well the car was driving around track one.
 
 #### 2. Final Model Architecture
 
 The final model architecture consisted of 5 convolutional layers a flattening layer and then another 4 dense layers. This is the nvidia model.
 
-![alt text][image1]
 
 #### 3. Creation of the Training Set & Training Process
 
@@ -103,21 +87,27 @@ I have used the sample data provided by udacity. For better generalizability I c
 
 To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
 
+![](flipped.png)
+
+
+
+After the collection process, I had 8036 number of data points. I then preprocessed this data by removing a lot of images with forward bias. As you can see in the bar plot below there a high bias for the car to move in a straight line. This could heavily impact training and make the model unable to deal with curved lanes, so I had to remove a lot of images from the collection set
+![](cut_forward_bias)
+
+In addition to flipping the images I also use panned the images.
+![](pan.png)
+
+And zoomed into relevant bits of the image.
+![](zoom.png)
+
+and finally altered the brightness.
 ![](brightness_altered.png)
 
-![][flipped.png]
-
-![][pan]
-
-![][zoom]
-
-![][cut_forward_bias]
+All these alterations help with the generalizability fo the model.
 
 
-After the collection process, I had X number of data points. I then preprocessed this data by ...
 
+I finally randomly shuffled the data set and put 20% of the data into a validation set. 
 
-I finally randomly shuffled the data set and put Y% of the data into a validation set. 
-
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
+I used this training data for training the model. The validation set helped determine if the model was over or under fitting. I used an adam optimizer so that manually training the learning rate wasn't necessary.
 
