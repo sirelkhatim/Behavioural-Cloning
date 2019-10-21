@@ -91,7 +91,7 @@ To augment the data sat, I also flipped images and angles thinking that this wou
 
 After the collection process, I had 8036 number of data points. I then preprocessed this data by removing a lot of images with forward bias. As you can see in the bar plot below there a high bias for the car to move in a straight line. This could heavily impact training and make the model unable to deal with curved lanes, so I had to remove a lot of images from the collection set
 
-![](cut_forward_bias,png)
+![](cut_forward_bias.png)
 
 In addition to flipping the images I also use panned the images.
 ![](pan.png)
