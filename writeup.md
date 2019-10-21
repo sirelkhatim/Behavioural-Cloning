@@ -33,7 +33,7 @@ The goals / steps of this project are the following:
 #### 1. Submission includes all required files and can be used to run the simulator in autonomous mode
 
 My project includes the following files:
-* model.py containing the script to create and train the model
+* behavioural_cloning.ipynb containing the script to create and train the model
 * drive.py for driving the car in autonomous mode
 * model.h5 containing the nvidia model
 * writeup.md summarizing the results
@@ -67,12 +67,10 @@ The model used an adam optimizer, so the learning rate was not tuned manually (m
 ### Model Architecture and Training Strategy
 
 #### 1. Solution Design Approach
-
-I used the nvidia model to train the c
-
+The nvidia model was used as a suggestion from a Udemy course I was taking.
 In order to gauge how well the model was working, I split my image and steering angle data into a training and validation set. I found that my first model had a low mean squared error on the training set but a high mean squared error on the validation set. This implied that the model was overfitting. 
 
-To combat the overfitting, I modified the model to include dropout layers, but after some experimentation the model seeemed to do better without dropout layers so I removed them.
+To combat the overfitting, I modified the model to include dropout layers, but after some experimentation the model seemed to do better without dropout layers so I removed them.
 
 The final step was to run the simulator to see how well the car was driving around track one.
 
@@ -85,14 +83,15 @@ The final model architecture consisted of 5 convolutional layers a flattening la
 
 I have used the sample data provided by udacity. For better generalizability I could have used the simulator provided by Udacity to gather more data by driving two laps and another two laps backward in the given track. As well as recording a few recovery laps.
 
-To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
+To augment the data sat, I also flipped images and angles thinking that this would improve the generalizability of the model. For example, here is an image that has then been flipped:
 
 ![](flipped.png)
 
 
 
 After the collection process, I had 8036 number of data points. I then preprocessed this data by removing a lot of images with forward bias. As you can see in the bar plot below there a high bias for the car to move in a straight line. This could heavily impact training and make the model unable to deal with curved lanes, so I had to remove a lot of images from the collection set
-![](cut_forward_bias)
+
+![](cut_forward_bias,png)
 
 In addition to flipping the images I also use panned the images.
 ![](pan.png)
