@@ -47,7 +47,7 @@ python drive.py model.h5
 
 #### 3. Submission code is usable and readable
 
-The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
+The behavioural_cloning.ipynb file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
 
 ### Model Architecture and Training Strategy
 
@@ -89,7 +89,7 @@ To augment the data sat, I also flipped images and angles thinking that this wou
 
 
 
-After the collection process, I had 8036 number of data points. I then preprocessed this data by removing a lot of images with forward bias. As you can see in the bar plot below there a high bias for the car to move in a straight line. This could heavily impact training and make the model unable to deal with curved lanes, so I had to remove a lot of images from the collection set
+After the collection process, I had 8036 number of data points. I then preprocessed this data by removing a lot of images with forward bias. As you can see in the bar plot below there a high bias for the car to move in a straight line. This could heavily impact training and make the model unable to deal with curved lanes, so I had to remove a lot of images from the collection set. This left me with 4356 images
 
 ![](cut_forward_bias.png)
 
@@ -102,7 +102,7 @@ And zoomed into relevant bits of the image.
 and finally altered the brightness.
 ![](brightness_altered.png)
 
-All these alterations help with the generalizability fo the model.
+All these alterations help with the generalizability of the model.
 
 
 
