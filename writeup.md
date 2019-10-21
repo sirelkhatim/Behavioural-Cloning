@@ -105,7 +105,7 @@ To augment the data sat, I also flipped images and angles thinking that this wou
 
 !(brightness_altered.png)
 
-![][flipped]
+![][flipped.png]
 
 ![][pan]
 
