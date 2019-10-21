@@ -103,7 +103,7 @@ I have used the sample data provided by udacity. For better generalizability I c
 
 To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
 
-![brightness_altered.png]
+!(brightness_altered.png)
 
 ![flipped.png]
 
