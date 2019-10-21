@@ -105,13 +105,13 @@ To augment the data sat, I also flipped images and angles thinking that this wou
 
 !(brightness_altered.png)
 
-![flipped.png]
+![][flipped]
 
-![pan.png]
+![][pan]
 
-![zoom.png]
+![][zoom]
 
-![cut_forward_bias.png]
+![][cut_forward_bias]
 
 
 After the collection process, I had X number of data points. I then preprocessed this data by ...
